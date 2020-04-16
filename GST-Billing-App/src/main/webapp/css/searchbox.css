@@ -1,0 +1,22 @@
+.input-container {
+  display: -ms-flexbox;
+  display: flex;*/
+  margin-bottom: 15px;
+}
+
+.icon {
+  color: white;
+  padding: 10px;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+

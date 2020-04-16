@@ -1,0 +1,21 @@
+div.background::after{
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;   
+  background-image: url('../bg2.jpg');
+  background-size: cover;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 360px;
+  right: 0;
+}
+
+h1{
+  font-family: 'Bree Serif', serif;
+}
+
+h3{
+  font-family: 'Josefin Sans', sans-serif;
+}
