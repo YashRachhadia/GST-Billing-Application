@@ -1,2 +1,2 @@
 # GST-Billing-Application
-Simple spring-boot GST billing app 
+Simple spring boot GST billing app
