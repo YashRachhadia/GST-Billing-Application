@@ -50,7 +50,7 @@
                 <th>Product Name</th>
                 <th>Product Price</th>
                 <th>GST applied</th>
-                <th>Enter Qunatity of Product needed</th>
+                <th>Enter Quantity of Product needed</th>
                 <th>Price of the Product</th>
             </tr>
             <c:set var = "initial_gst" scope = "session" value = "${0}"/>
