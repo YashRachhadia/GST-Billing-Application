@@ -64,9 +64,11 @@ public class ProductController {
     public String getProduct(@RequestParam("product_code") int prod_code,Model m)
     {
         Product obj  = productrepo.getProductData(prod_code);
+        
         if(obj == null){
         	return "billing";
         }
+        
         pbycode.add(obj);
 
         m.addAttribute("result",pbycode);
@@ -78,9 +80,11 @@ public class ProductController {
     public String getProductName(@RequestParam("product_name") String prod_name, Model m)
     {
         Product obj  = productrepo.getProductDataByName(prod_name);
+        
         if(obj == null){
         	return "billing";
         }
+        
         pbyname.add(obj);
 
         m.addAttribute("result",pbyname);
