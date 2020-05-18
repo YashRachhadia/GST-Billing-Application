@@ -42,7 +42,7 @@
         </div>
     </div>
         <br>
-        <h3 class="animate" style="text-align: center; font-size: 35px"><b>Cart Checkout</b></h3>
+        <h3 style="text-align: center; font-size: 35px"><b>Cart Checkout</b></h3>
         <br>
         <table>
             <tr>
