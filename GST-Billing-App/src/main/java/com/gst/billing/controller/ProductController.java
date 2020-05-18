@@ -70,7 +70,6 @@ public class ProductController {
         }
         
         pbycode.add(obj);
-
         m.addAttribute("result",pbycode);
 
         return "billing";
@@ -86,7 +85,6 @@ public class ProductController {
         }
         
         pbyname.add(obj);
-
         m.addAttribute("result",pbyname);
 
         return "billing";
