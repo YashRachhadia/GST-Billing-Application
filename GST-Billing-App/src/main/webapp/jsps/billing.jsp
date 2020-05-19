@@ -21,7 +21,7 @@
       		<a href="home">Home</a>
       		<a class="active" href="billing">Billing Page</a>
     	</div>
-        <h1 style="text-align: center; font-size: 50px">Billing Page</h2>
+        <h2 style="text-align: center; font-size: 50px">Billing Page</h2>
         <h3 style="text-align: center">Search product by product code/product name</h3>
         <div style="display: flex;align-content: center;justify-content: center;text-align: center">
             <form action="getProductByCode" method="get">
@@ -41,9 +41,12 @@
             </form>
         </div>
     </div>
+        <a href="neworder">
+            <button class="btn btn-primary" style="padding: 10px; font-size: 18px; margin-left: 715px">New Order</button>
+        </a>
+        <br>
         <br>
         <h3 style="text-align: center; font-size: 35px"><b>Cart Checkout</b></h3>
-        <br>
         <table>
             <tr>
                 <th>Product Code</th>
@@ -55,7 +58,22 @@
             </tr>
             <c:set var = "initial_gst" scope = "session" value = "${0}"/>
             <c:set var = "initial_grand_total" scope = "session" value = "${0}"/>
-            <c:forEach items="${result}" var="item">
+            <c:forEach items="${result_bycode}" var="item">
+                <tr>
+                    <td><c:out value="${item.product_code}" /></td>
+                    <td><c:out value="${item.product_name}" /></td>
+                    <td><c:out value="${item.product_price}" /></td>
+                    <td class="all_gst"><c:out value="${item.product_gst}" /></td>
+                    <c:set var = "initial_value" scope = "session" value = "${item.product_price*1}"/>
+                    <td>
+                        <input type="text" id="entry+${item.product_code}" value=1 onkeyup="initTotal(${item.product_price},${item.product_code},${item.product_gst})"/>
+                    </td>
+                    <td id="price+${item.product_code}" class="price_of_product">${initial_value}</td>
+                </tr>
+                <c:set var = "initial_grand_total" scope = "session" value = "${initial_grand_total + item.product_price}"/>
+            </c:forEach>
+
+            <c:forEach items="${result_byname}" var="item">
                 <tr>
                     <td><c:out value="${item.product_code}" /></td>
                     <td><c:out value="${item.product_name}" /></td>
@@ -72,7 +90,7 @@
             
             <tr>
                 <td colspan="4">Total</td>
-                <td id="getGst">${initial_gst}</td>
+                <td id="getGst">GST is ${initial_gst}</td>
                 <td id="finalTotal">Total Cost is ${initial_grand_total} INR</td>
             </tr>
         </table>
